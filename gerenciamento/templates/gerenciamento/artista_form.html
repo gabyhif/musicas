@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar ou Editar Artista</title>
+</head>
+<body>
+    <h1>{% if object %}Editar Artista{% else %}Adicionar Novo Artista{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'artista_list' %}">Voltar à Lista de Artistas</a>
+    <br>
+    <a href="{% url 'artista_list' %}">Voltar</a>  
+</body>
+</html>

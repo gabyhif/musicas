@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Artista</title>
+</head>
+<body>
+    <h1>Tem certeza de que deseja excluir o artista "{{ object.nome }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+    </form>
+    <a href="{% url 'artista_list' %}">Cancelar</a>
+    <br>
+    <a href="{% url 'artista_list' %}">Voltar</a>  
+</body>
+</html>

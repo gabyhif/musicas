@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Músicas</title>
+</head>
+<body>
+    <h1>Músicas Brasileiras</h1>
+    <a href="{% url 'musica_create' %}">Adicionar Nova Música</a>
+    <ul>
+        {% for musica in object_list %}
+            <li>
+                "{{ musica.titulo }}" - Artista: {{ musica.artista.nome }} ({{ musica.lancamento }})
+                <a href="{% url 'musica_update' musica.pk %}">Editar</a>
+                <a href="{% url 'musica_delete' musica.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'artista_list' %}">Ver Lista de Artistas</a>
+    <br>
+    <a href="{% url 'musica_create' %}">Voltar</a>  
+</body>
+</html>
